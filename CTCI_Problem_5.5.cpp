@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+
+
 using namespace std;
 
 //XOR gives us the bits that are different => A = 0001, B = 1010
@@ -22,7 +24,6 @@ using namespace std;
 int bits_required(int A, int B)
 {
 	int XOR = A ^ B;				//Compute XOR to get bit difference
-	int binary_form;
 	unsigned int checker = 1 << 31; //Bit shifting to get 2^31 (used as mask)
 	int count = 0;
 
@@ -57,6 +58,9 @@ int main()
 	//Testing implementation
 	unsigned int A = 0;
 	unsigned int B = 1;
+
+	bits_required(A,B);
+
 	
 	cout << "#Bits to convert " << A << " -> " << B << " = " << bits_required(A,B) <<  endl;
 	
@@ -74,6 +78,7 @@ int main()
 	B = -1000000000;
 	
 	cout << "#Bits to convert " << A << " -> " << B << " = " << bits_required(A,B) <<  endl;
+	
 	return 0;
 }
 
